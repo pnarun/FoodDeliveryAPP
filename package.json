@@ -1,0 +1,27 @@
+{
+  "name": "fooddeliveryapp",
+  "version": "1.0.0",
+  "description": "Food Delivery App",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pnarun/FoodDeliveryAPP.git"
+  },
+  "author": "Arun P N",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pnarun/FoodDeliveryAPP/issues"
+  },
+  "homepage": "https://github.com/pnarun/FoodDeliveryAPP#readme",
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}

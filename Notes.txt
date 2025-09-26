@@ -1,0 +1,3 @@
+Props: Arguments passing to react components
+Conflict driven UI: Control UI visibility based on the data we get from backend
+Use unique id as a key while calling multiple react components
