@@ -1,3 +1,24 @@
 Props: Arguments passing to react components
 Conflict driven UI: Control UI visibility based on the data we get from backend
 Use unique id as a key while calling multiple react components
+
+Two types of Export/Import
+1.  Default Export/Import: Works only when you want to export a single Component from a single file.
+    - export default Component;
+    - import Component from "path";
+2.  Named Export/Import: Works when you want to export multiple components from a single file.
+    - export const Component;
+    - import { Component } from "path";
+
+React Hooks - Normal JS utility functions
+    - useState() : popularly used
+        - Super powerful State variables in React
+        - Whenever a state variable updates, react will re-render the component.
+        - useState() returns an array where index 0 has state variable and index 1 has a function which updates the state variable which requires an argument nothing but an updated varible which need to replicate on state variable.
+    - useEffect() : less used
+
+React Fiber (Reconciliation Algorithm) - React16
+1. Virtual DOM is an Object representation of Actual DOM.
+2. Actual DOM is an actual DOM we write.
+3. When State variable updates, a new object is formed which compares with Virutal DOM and update the difference on Actual DOM.
+4. This is done by Difference Algorithm also known as Reconciliation Algorithm.
