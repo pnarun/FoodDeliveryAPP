@@ -22,3 +22,14 @@ React Fiber (Reconciliation Algorithm) - React16
 2. Actual DOM is an actual DOM we write.
 3. When State variable updates, a new object is formed which compares with Virutal DOM and update the difference on Actual DOM.
 4. This is done by Difference Algorithm also known as Reconciliation Algorithm.
+
+Monolith Architectre: A single project has services like API, UI, Auth, DB, SMS etc.. which need to build everytime a small change occurs.
+Microservices: A seperate project for each services to do its job seperately by talking to each other.
+    - The serices can be accessed using different ports ex, 1234:UI, 1004:DB etc..
+
+Two approaches
+1. Load data -> API call -> Render
+2. Load data -> Render -> API call -> Re-Render
+
+Second approach is used in React to provide better UX instead of waiting like 500ms for UI to provide response and render them in first approach.
+Here comes the useEffect() into picture and which will be called once the Body component is rendered/loaded.

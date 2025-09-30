@@ -7,6 +7,7 @@
     "build": "parcel build index.html",
     "test": "jest"
   },
+  "proxy": "https://swiggy-api-4c740.web.app",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pnarun/FoodDeliveryAPP.git"
