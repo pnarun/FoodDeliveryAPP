@@ -33,3 +33,25 @@ Two approaches
 
 Second approach is used in React to provide better UX instead of waiting like 500ms for UI to provide response and render them in first approach.
 Here comes the useEffect() into picture and which will be called once the Body component is rendered/loaded.
+
+1. Don't use useState outside compnents and inside conditional loops.
+2. useEffect accepts two parameters, callback function and a dependency array.
+    - If no dependency array means the useEffect will be called everytime the component renders.
+    - If empty dependency array means the useEffect will be called only once when the component renders for first time.
+    - If dependency array has something, let say a useState variable, then the useEffect will be called each time the useState variable updates.
+
+1. Use createBrowserRouter to create all router that are required and RouterProvider to render the created router.
+2. These two packages are available from react-router-dom which handles error page as well with a simple and custom message.
+3. useRouteError hook can be used to show more info on the  routing error.
+4. Outlet is used to render child components.
+5. If we use <a href="" /> to redirect to another page, the whole page will be loaded.
+6. If we use <Link to="" /> from react-router-dom, only that particular compnent get loaded instead of whole page.
+7. Since only components are changing instead of page, we have only one page for this application and hence it is called Single Page Application.
+
+There are 2 types of Routing in web apps 
+1. Client Side Routing
+    - The decision to show pages/components are taken without API
+2. Server Side Routing
+    - The decision to show pages/components are taken with the help of API
+
+useParams() is used to get the data paased through link(url).
