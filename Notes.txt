@@ -55,3 +55,32 @@ There are 2 types of Routing in web apps
     - The decision to show pages/components are taken with the help of API
 
 useParams() is used to get the data paased through link(url).
+
+Class based component
+    - A normal javascript class which renders(returns) react component jsx.
+    - The arguments will be passed through constructor and use this.props. to get the parameters.
+    - constructoris the best place to receive arguments and to create state variables.
+    - Use this.setState() to update state variables and Never update state variables directly. 
+    - Lifecycle methods
+            + constructor
+            + render
+            + componentDidMount - This will be called once the component is completely rendered.
+                - This is used to make API call.
+                - when there are multiple child components, the order of life cycle will be,
+                    # Parent constructor    
+                    # Parent render
+                        # First child constructor
+                        # First child render
+                        # Second child constructor
+                        # Second child render
+                        <DOM UPDATED - IN SINGLE BATCH>
+                        # First child componentDidMount
+                        # Second child componentDidMount
+                    # Parent componentDidMount
+                    - Reference : https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+                    - Loading the component has two phases: Render phase and Commit phase
+                    - First render of all child components are done and then the commit phase of all child components are done.
+                    - This behaviour is because, updating the DOM is costlier and react find a way of updating the dom at the last after rendering all child components. 
+                    - In this way, the DOM updates at the end only once after rendering all child components and hence the react is fast.
+            + componentDidUpdate - This will be called once the state variables get updated, once after componentDidMount called.
+            + componentWillUnmount - This will be called just before you move out of the page.
