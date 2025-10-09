@@ -3,8 +3,12 @@ import Shimmer from "./Shimmer";
 import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import useOnlineStatus from "../utils/useOlineStatus";
 
 const Body = () => {
+  const customGoogleSheetsUrl =
+    "https://script.google.com/macros/s/AKfycbwSQ9MN73kxdfze-ZCmg_bEi3MwO6c9b4HKl3JCktm7s0ciCZa_9_8XJ2ndQYxcpLCi/exec";
   const swiggyApiUrl =
     // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9174154&lng=77.4857894&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
     "https://swiggy-api-4c740.web.app/swiggy-api.json";
@@ -37,11 +41,30 @@ const Body = () => {
     //     swiggyApiUrl
     //   // ,{ payload }
     // );
-    // const data = await fetch("https://swiggy-api-4c740.web.app/swiggy-api.json");
+    // const data = await fetch(customGoogleSheetsUrl);
     // const jsonData = await data.json();
     // console.log(data);
     // console.log(jsonData);
+    // try {
+    //   const response = await axios.get(customGoogleSheetsUrl);
+    //   console.log(response.data);
+    // } catch (error) {
+    //   console.error("Error fetching data:", error);
+    // }
   };
+
+  //   async function fetchData() {
+  //   try {
+  //     const response = await axios.get('https://api.example.com/data');
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     console.error('Error fetching data:', error);
+  //   }
+  // }
+
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false) return (<h1>It seems you are offline. Please check you Internet connection.</h1>)
 
   let reslists = resList;
   return (
@@ -83,7 +106,9 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurantList.map((restaurant) => (
-          <Link key={restaurant.resId} to={"/restaurants/" + restaurant.resId}><RestaurantCard resData={restaurant} /></Link>
+          <Link key={restaurant.resId} to={"/restaurants/" + restaurant.resId}>
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
