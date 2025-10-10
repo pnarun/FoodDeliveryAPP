@@ -99,3 +99,10 @@ Deploy url: https://script.google.com/macros/s/AKfycbyXkaVRiGHydgw0yET2MsyrpVgPa
 Chunking - Code splitting - Dynamic Bundling - lazy loading - on demand loading
 - Break down app into smaller chunks to works faster
 - Suspense component from react can be used while lazy loading to handle the time that takes to load the new feature(here Grocery);
+
+SASS and SCSS - Writing CSS with some super powers
+Style components - To write CSS specifically for components - https://styled-components.com
+Matrial UI, Bootstrap, Chakra UI, Ant design are other options we can explore for CSS.
+Tailwind CSS : https://tailwindcss.com/
+    - Configuring Tailwind CSS : https://tailwindcss.com/docs/installation/framework-guides/parcel
+    - This uses postcss to transfer CSS along with CSS
